@@ -31,14 +31,14 @@ public class CustomerRegistration extends AppCompatActivity {
     String[] Maharashtra = {"Mumbai","Pune","Nashik"};
     String[] Gujarat = {"Ahmedabad","Baroda","Surat"};
 
-    TextInputLayout custfname,custlname,custEmail,custPass,custcpass,custmobileno,custlocaladd,custarea,custpincode;
+    TextInputLayout Custfname,Custlname,CustEmail,CustPass,Custcpass,Custmobileno,Custlocaladd,Custarea,Custpincode;
     Spinner custStatespin,custCityspin;
     Button custsignreg, custEmaill;
     CountryCodePicker custCpp;
     FirebaseAuth FAuth;
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    String Custfname,Custlname,Custemailid,Custpassword,Custconfpassword,Custmobile,CustLocaladdress,CustArea,CustPincode,Custstatee,Custcityy;
+    String CustFname,CustLname,Custemailid,Custpassword,Custconfpassword,Custmobile,CustLocaladdress,CustArea,CustPincode,Custstatee,Custcityy;
     String role="Customer";
 
     @Override
@@ -46,18 +46,18 @@ public class CustomerRegistration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_registration);
 
-        custfname = (TextInputLayout) findViewById(R.id.CustomerFirstname);
-        custlname = (TextInputLayout) findViewById(R.id.CustomerLastname);
-        custEmail = (TextInputLayout) findViewById(R.id.CustomerEmail);
-        custPass = (TextInputLayout) findViewById(R.id.Password);
-        custcpass = (TextInputLayout) findViewById(R.id.CustomerConfirm);
-        custmobileno = (TextInputLayout) findViewById(R.id.CustomerNumber);
-        custlocaladd = (TextInputLayout) findViewById(R.id.LocalAddress);
-        custpincode = (TextInputLayout) findViewById(R.id.PinsCode);
+        Custfname = (TextInputLayout) findViewById(R.id.CustomerFirstname);
+        Custlname = (TextInputLayout) findViewById(R.id.CustomerLastname);
+        CustEmail = (TextInputLayout) findViewById(R.id.CustomerEmailid);
+        CustPass = (TextInputLayout) findViewById(R.id.Password);
+        Custcpass = (TextInputLayout) findViewById(R.id.CustomerConfirm);
+        Custmobileno = (TextInputLayout) findViewById(R.id.CustomerNumber);
+        Custlocaladd = (TextInputLayout) findViewById(R.id.LocalAddress);
+        Custpincode = (TextInputLayout) findViewById(R.id.PinsCode);
         custStatespin = (Spinner) findViewById(R.id.States);
         custCityspin = (Spinner) findViewById(R.id.Cities);
-        custarea = (TextInputLayout) findViewById(R.id.Area);
-
+        Custarea = (TextInputLayout) findViewById(R.id.Area);
+        custCpp = (CountryCodePicker) findViewById(R.id.CountryCode);
         custsignreg = (Button) findViewById(R.id.CustomerRegister);
         custEmaill = (Button) findViewById(R.id.email);
 
@@ -114,15 +114,15 @@ public class CustomerRegistration extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Custfname = custfname.getEditText().getText().toString().trim();
-                Custlname = custlname.getEditText().getText().toString().trim();
-                Custemailid = custEmail.getEditText().getText().toString().trim();
-                Custmobile = custmobileno.getEditText().getText().toString().trim();
-                Custpassword = custPass.getEditText().getText().toString().trim();
-                Custconfpassword = custcpass.getEditText().getText().toString().trim();
-                CustArea = custarea.getEditText().getText().toString().trim();
-                CustLocaladdress = custlocaladd.getEditText().getText().toString().trim();
-                CustPincode = custpincode.getEditText().getText().toString().trim();
+                CustFname = Custfname.getEditText().getText().toString().trim();
+                CustLname = Custlname.getEditText().getText().toString().trim();
+                Custemailid = CustEmail.getEditText().getText().toString().trim();
+                Custmobile = Custmobileno.getEditText().getText().toString().trim();
+                Custpassword = CustPass.getEditText().getText().toString().trim();
+                Custconfpassword = Custcpass.getEditText().getText().toString().trim();
+                CustArea = Custarea.getEditText().getText().toString().trim();
+                CustLocaladdress = Custlocaladd.getEditText().getText().toString().trim();
+                CustPincode = Custpincode.getEditText().getText().toString().trim();
 
                 if (isValid()) {
                     final ProgressDialog mDialog = new ProgressDialog(CustomerRegistration.this);
@@ -146,8 +146,8 @@ public class CustomerRegistration extends AppCompatActivity {
 
                                         HashMap<String, String> hashMap1 = new HashMap<>();
                                         hashMap1.put("Mobile No", Custmobile);
-                                        hashMap1.put("First Name", Custfname);
-                                        hashMap1.put("Last Name", Custlname);
+                                        hashMap1.put("First Name", CustFname);
+                                        hashMap1.put("Last Name", CustLname);
                                         hashMap1.put("EmailId", Custemailid);
                                         hashMap1.put("City", Custcityy);
                                         hashMap1.put("Area", CustArea);
@@ -223,97 +223,97 @@ public class CustomerRegistration extends AppCompatActivity {
 
     String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     public boolean isValid(){
-        custEmail.setErrorEnabled(false);
-        custEmail.setError("");
-        custfname.setErrorEnabled(false);
-        custfname.setError("");
-        custlname.setErrorEnabled(false);
-        custlname.setError("");
-        custPass.setErrorEnabled(false);
-        custPass.setError("");
-        custmobileno.setErrorEnabled(false);
-        custmobileno.setError("");
-        custcpass.setErrorEnabled(false);
-        custcpass.setError("");
-        custarea.setErrorEnabled(false);
-        custarea.setError("");
-        custlocaladd.setErrorEnabled(false);
-        custlocaladd.setError("");
-        custpincode.setErrorEnabled(false);
-        custpincode.setError("");
+        CustEmail.setErrorEnabled(false);
+        CustEmail.setError("");
+        Custfname.setErrorEnabled(false);
+        Custfname.setError("");
+        Custlname.setErrorEnabled(false);
+        Custlname.setError("");
+        CustPass.setErrorEnabled(false);
+        CustPass.setError("");
+        Custmobileno.setErrorEnabled(false);
+        Custmobileno.setError("");
+        Custcpass.setErrorEnabled(false);
+        Custcpass.setError("");
+        Custarea.setErrorEnabled(false);
+        Custarea.setError("");
+        Custlocaladd.setErrorEnabled(false);
+        Custlocaladd.setError("");
+        Custpincode.setErrorEnabled(false);
+        Custpincode.setError("");
 
         boolean isValid=false,isValidCustlocaladd=false,isValidCustlname=false,isValidCustname=false,isValidCustemail=false,isValidCustpassword=false,isValidCustconfpassword=false,isValidCustmobilenum=false,isValidCustarea=false,isValidCustpincode=false;
-        if(TextUtils.isEmpty(Custfname)){
-            custfname.setErrorEnabled(true);
-            custfname.setError("Enter First Name");
+        if(TextUtils.isEmpty(CustFname)){
+            Custfname.setErrorEnabled(true);
+            Custfname.setError("Enter First Name");
         }else{
             isValidCustname = true;
         }
-        if(TextUtils.isEmpty(Custlname)){
-            custlname.setErrorEnabled(true);
-            custlname.setError("Enter Last Name");
+        if(TextUtils.isEmpty(CustLname)){
+            Custlname.setErrorEnabled(true);
+            Custlname.setError("Enter Last Name");
         }else{
             isValidCustlname = true;
         }
         if(TextUtils.isEmpty(Custemailid)){
-            custEmail.setErrorEnabled(true);
-            custEmail.setError("Email Is Required");
+            CustEmail.setErrorEnabled(true);
+            CustEmail.setError("Email Is Required");
         }else{
             if(Custemailid.matches(emailpattern)){
                 isValidCustemail = true;
             }else{
-                custEmail.setErrorEnabled(true);
-                custEmail.setError("Enter a Valid Email Id");
+                CustEmail.setErrorEnabled(true);
+                CustEmail.setError("Enter a Valid Email Id");
             }
         }
         if(TextUtils.isEmpty(Custpassword)){
-            custPass.setErrorEnabled(true);
-            custPass.setError("Enter Password");
+            CustPass.setErrorEnabled(true);
+            CustPass.setError("Enter Password");
         }else{
             if(Custpassword.length()<8){
-                custPass.setErrorEnabled(true);
-                custPass.setError("Password is Weak");
+                CustPass.setErrorEnabled(true);
+                CustPass.setError("Password is Weak");
             }else{
                 isValidCustpassword = true;
             }
         }
         if(TextUtils.isEmpty(Custconfpassword)){
-            custcpass.setErrorEnabled(true);
-            custcpass.setError("Enter Password Again");
+            Custcpass.setErrorEnabled(true);
+            Custcpass.setError("Enter Password Again");
         }else{
             if(!Custpassword.equals(Custconfpassword)){
-                custcpass.setErrorEnabled(true);
-                custcpass.setError("Password Dosen't Match");
+                Custcpass.setErrorEnabled(true);
+                Custcpass.setError("Password Dosen't Match");
             }else{
                 isValidCustconfpassword = true;
             }
         }
         if(TextUtils.isEmpty(Custmobile)){
-            custmobileno.setErrorEnabled(true);
-            custmobileno.setError("Mobile Number Is Required");
+            Custmobileno.setErrorEnabled(true);
+            Custmobileno.setError("Mobile Number Is Required");
         }else{
             if(Custmobile.length()<10){
-                custmobileno.setErrorEnabled(true);
-                custmobileno.setError("Invalid Mobile Number");
+                Custmobileno.setErrorEnabled(true);
+                Custmobileno.setError("Invalid Mobile Number");
             }else{
                 isValidCustmobilenum = true;
             }
         }
         if(TextUtils.isEmpty(CustArea)){
-            custarea.setErrorEnabled(true);
-            custarea.setError("Area Is Required");
+            Custarea.setErrorEnabled(true);
+            Custarea.setError("Area Is Required");
         }else{
             isValidCustarea = true;
         }
         if(TextUtils.isEmpty(CustPincode)){
-            custpincode.setErrorEnabled(true);
-            custpincode.setError("Please Enter Pincode");
+            Custpincode.setErrorEnabled(true);
+            Custpincode.setError("Please Enter Pincode");
         }else{
             isValidCustpincode = true;
         }
         if(TextUtils.isEmpty(CustLocaladdress)){
-            custlocaladd.setErrorEnabled(true);
-            custlocaladd.setError("Fields Can't Be Empty");
+            Custlocaladd.setErrorEnabled(true);
+            Custlocaladd.setError("Fields Can't Be Empty");
         }else{
             isValidCustlocaladd = true;
         }
