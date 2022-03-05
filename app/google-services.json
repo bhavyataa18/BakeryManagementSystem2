@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "354289967359",
+    "project_id": "bakerymanagementsystem-697dd",
+    "storage_bucket": "bakerymanagementsystem-697dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354289967359:android:e64b8f682b6d5a8be66cca",
+        "android_client_info": {
+          "package_name": "com.example.bakerymanagementsystem2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354289967359-7abh523oahcnts05dnimdmnel6v9c4vo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC80PxtEG-0W8NBcKz8il-Fs_htxK7TlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354289967359-7abh523oahcnts05dnimdmnel6v9c4vo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
